@@ -1,13 +1,13 @@
 from typing import Any
 
 
-def filter_by_state(list_of_dictionaries: Any) -> Any:
+def filter_by_state(list_of_dictionaries: list[dict[str, Any]], keyword="EXECUTED") -> list[dict[str, Any]]:
     """Вывод функции со статусом по умолчанию 'EXECUTED'"""
-    answer = []
-    for list in list_of_dictionaries:
-        if list["state"] == "EXECUTED":
-            answer.append(list)
-    return answer
+    answer_status = []
+    for list_status in list_of_dictionaries:
+        if list_status["state"] == keyword:
+            answer_status.append(list_status)
+    return answer_status
 
 
 print(
@@ -34,10 +34,10 @@ print(
 )
 
 
-def sort_by_date(enter_date: Any) -> Any:
+def sort_by_date(enter_date: list[dict[str, Any]], reverse=True) -> list[dict[str, Any]]:
     """Вывод функции (сортировка по убыванию, т. е. сначала самые последние операции)"""
-    list = sorted(enter_date, key=lambda list_new: list_new["date"], reverse=reversed)
-    return list
+    list_operation = sorted(enter_date, key=lambda list_new: list_new["date"], reverse=reverse)
+    return list_operation
 
 
 print(
