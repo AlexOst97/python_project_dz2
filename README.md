@@ -1,4 +1,4 @@
-# python_project_dz2
+# Проект 'python_project_dz2'
 
 ## Цель проекта:
 
